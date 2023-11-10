@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// import React,
+import { useState } from 'react';
 import myVideo from 'D:/Web development/react app/QuestionVideo.mp4';
 
 function VideoPlayer() {
