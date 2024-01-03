@@ -1,4 +1,3 @@
-// import React,
 import { useState } from 'react';
 import myVideo from 'D:/Web development/react app/QuestionVideo.mp4';
 
@@ -18,12 +17,12 @@ function VideoPlayer() {
     setShowThanksMessage(true);
   };
 
-  const handleVideoTimeUpdate = (event) => {
-    const video = event.target;
+  const handleVideoTimeUpdate = (event: React.SyntheticEvent) => {
+    const video = event.target as HTMLVideoElement; // Explicitly cast event.target as HTMLVideoElement
     const progress = (video.currentTime / video.duration) * 100;
     setVideoProgress(progress);
   };
-
+  
   return (
     <div>
       {showThanksMessage ? (
