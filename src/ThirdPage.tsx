@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import myVideo from 'D:/Web development/react app/QuestionVideo.mp4';
+import myVideo from 'react app/QuestionVideo.mp4';
 
 function VideoPlayer() {
   const [showThanksMessage, setShowThanksMessage] = useState(false);
