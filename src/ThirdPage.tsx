@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import myVideo from 'QuestionVideo.mp4';
+import myVideo from './QuestionVideo.mp4'; // Adjust the import to use a relative path
 
 function VideoPlayer() {
   const [showThanksMessage, setShowThanksMessage] = useState(false);
@@ -8,7 +8,6 @@ function VideoPlayer() {
   const videoStyle = {
     width: '100%',
     height: 'auto',
-    // borderRadius: '10px',
     border: '4px solid #1a1a1a',
     padding: '10px',
   };
@@ -18,11 +17,11 @@ function VideoPlayer() {
   };
 
   const handleVideoTimeUpdate = (event: React.SyntheticEvent) => {
-    const video = event.target as HTMLVideoElement; // Explicitly cast event.target as HTMLVideoElement
+    const video = event.target as HTMLVideoElement;
     const progress = (video.currentTime / video.duration) * 100;
     setVideoProgress(progress);
   };
-  
+
   return (
     <div>
       {showThanksMessage ? (
@@ -31,7 +30,10 @@ function VideoPlayer() {
         </div>
       ) : (
         <>
-          <h2>Answer to move <br /><span style={{ color: 'green' }}>Forward :-)</span></h2>
+          <h2>
+            Answer to move <br />
+            <span style={{ color: 'green' }}>Forward :-)</span>
+          </h2>
           <video
             style={videoStyle}
             controls
@@ -42,7 +44,7 @@ function VideoPlayer() {
             <source src={myVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <h2 style={{color : 'red'}}>Video Progress: {videoProgress.toFixed(2)}%</h2>
+          <h2 style={{ color: 'red' }}>Video Progress: {videoProgress.toFixed(2)}%</h2>
         </>
       )}
     </div>
